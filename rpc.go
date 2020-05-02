@@ -20,3 +20,24 @@ func (DemoService) Div(
 	*result = float64(args.A)/ float64(args.B)
 	return nil
 }
+
+func (DemoService) Add(
+	args * Args, result *float64) error{
+
+	*result = float64(args.A) + float64((args.B))
+	return nil
+}
+
+func (DemoService) Sub(
+	args * Args, result *float64) error{
+
+	*result = float64(args.A) - float64((args.B))
+	return nil
+}
+
+func (DemoService) Multiply(
+	args * Args, result *float64) error{
+
+	*result = float64(args.A) * float64((args.B))
+	return nil
+}

@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	// register a service
 	rpc.Register(rpcdemo.DemoService{})
 
 	listener, err := net.Listen("tcp", ":1234")
@@ -22,7 +23,7 @@ func main() {
 			log.Printf("accept error: %v", err)
 			continue
 		}
-
+		// use a go routine so that server can continue to recieve many request
 		go jsonrpc.ServeConn(conn)
 	}
 }
